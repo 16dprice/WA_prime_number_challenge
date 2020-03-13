@@ -56,6 +56,11 @@ html, body {
     height: 20%;
 }
 
+.input-area button {
+    height: 15%;
+    border-radius: 1rem;
+}
+
 .show {
     display: block !important;
 }

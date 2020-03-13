@@ -1,6 +1,15 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const existingPrimes = JSON.parse(localStorage.getItem("primes"));
+    const existingComposites = JSON.parse(localStorage.getItem("composites"));
+
+    if(existingPrimes !== null) document.getElementById('primes-textarea').innerHTML = existingPrimes.join(', ');
+    if(existingComposites !== null) document.getElementById('composites-textarea').innerHTML = existingComposites.join(', ');
+});
+
 function checkPrime() {
 
     let num = document.getElementById('prime-input').value;
+    if(num === "") return;
 
     if(isPrime(num)) {
         storePrime(num);
@@ -31,6 +40,7 @@ function storePrime(num) {
     if(!existingPrimes.includes(num)) existingPrimes.push(num);
 
     localStorage.setItem("primes", JSON.stringify(existingPrimes));
+    document.getElementById('primes-textarea').innerHTML = existingPrimes.join(', ');
 
 }
 
@@ -41,4 +51,6 @@ function storeComposite(num) {
     if(!existingComposites.includes(num)) existingComposites.push(num);
 
     localStorage.setItem("composites", JSON.stringify(existingComposites));
+    document.getElementById('composites-textarea').innerHTML = existingComposites.join(', ');
+
 }

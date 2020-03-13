@@ -1,0 +1,5 @@
+function checkPrime(button) {
+
+
+
+}

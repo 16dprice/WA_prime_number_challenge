@@ -10,16 +10,24 @@ function checkPrime() {
 
     let num = document.getElementById('prime-input').value;
     if(num === "") return;
+    if(num < 2) {
+        document.getElementById('invalid').style.display = 'block';
+        document.getElementById('yes').style.display = 'none';
+        document.getElementById('no').style.display = 'none';
+        return;
+    }
 
     // store the number in local storage and display whether or not it was a prime number
     if(isPrime(num)) {
         storePrime(num);
         document.getElementById('yes').style.display = 'block';
         document.getElementById('no').style.display = 'none';
+        document.getElementById('invalid').style.display = 'none';
     } else {
         storeComposite(num);
         document.getElementById('no').style.display = 'block';
         document.getElementById('yes').style.display = 'none';
+        document.getElementById('invalid').style.display = 'none';
     }
 
 }

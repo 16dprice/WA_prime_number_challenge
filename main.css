@@ -58,8 +58,15 @@ html, body {
 
 #yes {
     display: none;
+    padding-top: 1rem;
 }
 
 #no {
     display: none;
+    padding-top: 1rem;
+}
+
+#invalid {
+    display: none;
+    padding-top: 1rem;
 }

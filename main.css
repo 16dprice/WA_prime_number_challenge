@@ -56,6 +56,10 @@ html, body {
     height: 20%;
 }
 
+.show {
+    display: block !important;
+}
+
 #yes {
     display: none;
     padding-top: 1rem;

@@ -8,26 +8,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function checkPrime() {
 
+    let invalidMsg = document.getElementById('invalid');
+    let yesMsg = document.getElementById('yes');
+    let noMsg = document.getElementById('no');
+
     let num = document.getElementById('prime-input').value;
+
     if(num === "") return;
     if(num < 2) {
-        document.getElementById('invalid').style.display = 'block';
-        document.getElementById('yes').style.display = 'none';
-        document.getElementById('no').style.display = 'none';
+        invalidMsg.classList.add('show');
+
+        yesMsg.classList.remove('show');
+        noMsg.classList.remove('show');
         return;
     }
 
     // store the number in local storage and display whether or not it was a prime number
     if(isPrime(num)) {
         storePrime(num);
-        document.getElementById('yes').style.display = 'block';
-        document.getElementById('no').style.display = 'none';
-        document.getElementById('invalid').style.display = 'none';
+        yesMsg.innerHTML = `Yes, ${num} <i>is</i> prime!`;
+        yesMsg.classList.add('show');
+
+        noMsg.classList.remove('show');
+        invalidMsg.classList.remove('show');
     } else {
         storeComposite(num);
-        document.getElementById('no').style.display = 'block';
-        document.getElementById('yes').style.display = 'none';
-        document.getElementById('invalid').style.display = 'none';
+        noMsg.innerHTML = `No, ${num} <i>is not</i> prime!`;
+        noMsg.classList.add('show');
+
+        yesMsg.classList.remove('show');
+        invalidMsg.classList.remove('show');
     }
 
 }

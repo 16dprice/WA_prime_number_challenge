@@ -10,21 +10,30 @@
 </head>
 <body>
 
-    <div class="explanation">
-        <span>A prime number is...</span>
-        <span>A composite number is...</span>
-    </div>
+    <div class="container">
+        <div class="explanation">
+            <div>A prime number is...</div>
+            <div>A composite number is...</div>
+        </div>
 
-    <div class="main-display">
-        <div class="input-area">
-            <input type="number" min="1">
-            <button onclick="checkPrime(this)">Check!</button>
-        </div>
-        <div class="primes-found">
-            <div>Primes You've Found!</div>
-        </div>
-        <div class="composites-found">
-            <div>Composites You've Found!</div>
+        <div class="main-display">
+            <div class="input-area">
+                <br>
+                <input id="prime-input" type="number" min="2" onkeydown="return event.keyCode !== 69">
+                <button onclick="checkPrime()">Check!</button>
+                <div class="response">
+                    <div id="yes">Yes!</div>
+                    <div id="no">No!</div>
+                </div>
+            </div>
+            <div class="primes-found">
+                <div>Primes You've Found!</div>
+                <textarea id="primes-textarea" cols="30" rows="10"></textarea>
+            </div>
+            <div class="composites-found">
+                <div>Composites You've Found!</div>
+                <textarea id="composites-textarea" cols="30" rows="10"></textarea>
+            </div>
         </div>
     </div>
 

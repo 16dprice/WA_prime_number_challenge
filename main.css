@@ -1,7 +1,51 @@
+html, body {
+    height: 100%;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+.container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
 
+.explanation {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    align-items: center;
+}
+
+.main-display {
+    display: grid;
+    grid-gap: 2rem;
+    margin: 1rem auto;
+    text-align: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.input-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-area input {
+    height: 20%;
+}
+
+#yes {
+    display: none;
+}
+
+#no {
+    display: none;
+}

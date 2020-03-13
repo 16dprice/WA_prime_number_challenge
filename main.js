@@ -11,6 +11,7 @@ function checkPrime() {
     let num = document.getElementById('prime-input').value;
     if(num === "") return;
 
+    // store the number in local storage and display whether or not it was a prime number
     if(isPrime(num)) {
         storePrime(num);
         document.getElementById('yes').style.display = 'block';
@@ -23,8 +24,8 @@ function checkPrime() {
 
 }
 
+// simple prime checking function
 function isPrime(num) {
-
     let sqrtNum = Math.sqrt(num);
 
     for(let i = 2; i <= sqrtNum; i++) {

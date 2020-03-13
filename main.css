@@ -8,6 +8,16 @@ html, body {
     padding: 0;
 }
 
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.08;
+}
+
 .container {
     width: 80%;
     height: 100%;
@@ -23,6 +33,10 @@ html, body {
     flex-direction: column;
     margin: 1rem auto;
     align-items: center;
+}
+
+.explanation div {
+    padding: 0.5rem;
 }
 
 .main-display {
